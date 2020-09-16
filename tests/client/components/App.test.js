@@ -20,7 +20,7 @@ test('Title renders on App', () => {
 
 test('App has some routes when not logged in', () => {
   // Arrange
-  const expected = 3
+  const expected = 4
 
   // Act
   const wrapper = shallow(<App auth={{isAuthenticated: false}} dispatch={() => {}}/>)
@@ -32,7 +32,7 @@ test('App has some routes when not logged in', () => {
 
 test('App has one less route when logged in', () => {
   // Arrange
-  const expected = 2
+  const expected = 3
 
   // Act
   const wrapper = shallow(<App auth={{isAuthenticated: true}} dispatch={() => {}}/>)
