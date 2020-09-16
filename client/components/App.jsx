@@ -24,7 +24,7 @@ export class App extends React.Component {
               <Link to='/' className="">
                 <h1 className="title is-1">Lost and Found</h1>
               </Link>
-              <Nav />
+              <Route path="/" component={Nav} />
             </div>
           </div>
 
