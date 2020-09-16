@@ -91,7 +91,7 @@ As a registered user:
 | Get | /api/lost | No | Get the list of lost pets | Array of Objects (object = A Lost Pet) |
 | Get | /api/found | No | Get the list of found pets | Array of Objects (object = A Found Pet) |
 | Post | /api/lost | Yes | Add a Lost pet to the db | The Pet that was added (as an object) |
-| Post | /api/lost | Yes | Add a Found pet to the db | The Pet that was added (as an object) |
+| Post | /api/found | Yes | Add a Found pet to the db | The Pet that was added (as an object) |
 
 ## DB (Server Side) -
   There should be three tables for MVP. You may want/need to add additional columns or tables.
