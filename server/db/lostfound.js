@@ -12,7 +12,7 @@ function getAllLost (db = connection){
 function getLostById (lostId, db = connection){
     return db('lost')
         .where('lost.id', lostId)
-        .select()
+        .select('lost.id', 'lost.name', 'lost.species', 'lost.photo', 'users.email_address', 'users.contact_details')
         .join('users', 'user_id', 'users.id')
         .first()
 }
@@ -46,7 +46,7 @@ function getAllFound (db = connection){
 function getFoundById (foundId, db = connection){
     return db('found')
         .where('found.id', foundId)
-        .select()
+        .select('found.id', 'found.species', 'found.photo', 'users.email_address', 'users.contact_details')
         .join('users', 'user_id', 'users.id')
         .first()
 }
