@@ -5,8 +5,8 @@ import { connect } from 'react-redux'
 import Login from './Login'
 import Register from './Register'
 import Nav from './Nav'
-
 import Listings from './Listings'
+import PetProfile from './PetProfile'
 
 import { checkAuth } from '../actions/auth'
 
@@ -38,6 +38,7 @@ function App (props) {
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/listings" component={Listings} />
+          <Route path="/pet-profile" component={PetProfile} />
         </div>
 
       </div>
