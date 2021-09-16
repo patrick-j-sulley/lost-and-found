@@ -1,6 +1,6 @@
 import request from 'superagent'
 
-export function getFoundPets () {
+export function getFoundPetsAPI () {
     return request.get ('/api/found')
         .then(res => {
             return res.body
