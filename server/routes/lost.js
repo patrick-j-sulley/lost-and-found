@@ -24,15 +24,9 @@ router.post('/', (req, res) => {
     newLost.user_id = req.body.user_id
 
     db.addLost(newLost)
-    .then(newLost => {
+    .then(newLostId => {
+        newLost.id = newLostId[0]
         res.json(newLost)
-
-        // WIP - return lost pet by id after adding new lost pet
-        // db.getLostById(newLost)
-        // .then(getnewLost => {
-        //     res.json(getnewLost)
-        // })
-
     })
 })
 
