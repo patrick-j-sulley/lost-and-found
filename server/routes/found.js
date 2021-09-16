@@ -1,6 +1,5 @@
 const express = require('express')
 
-// db.js required
 const db = require('../db/lostfound')
 
 const router = express.Router()
