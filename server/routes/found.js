@@ -16,12 +16,24 @@ router.get('/:id', (req, res) => {
     })
 })
 
-// WIP
+
 router.post('/', (req, res) => {
-    // db functions required
-    // db.addLostPet().then(lostPets => {
-    //     return res.json(lostPets)
-    // })
+    newFound = {}
+    newFound.species = req.body.species
+    newFound.photo = req.body.photo
+    newFound.user_id = req.body.user_id
+
+    db.addFound(newFound)
+    .then(newFound => {
+        res.json(newFound)
+
+        // WIP - return found pet by id after adding new found pet
+        // db.getFoundById(newFound)
+        // .then(getNewFound => {
+        //     res.json(getNewFound)
+        // })
+
+    })
 })
 
 module.exports = router
