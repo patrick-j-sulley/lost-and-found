@@ -9,13 +9,13 @@ const errorMessages = {
 export function register (creds) {
   return authRegister(creds, { baseUrl })
     .catch(err => {
-      throw errorMessages[err.response.body.errorType]
+      throw errorMessages[err.message]
     })
 }
 
 export function login (creds) {
   return authLogin(creds, { baseUrl })
     .catch(err => {
-      throw errorMessages[err.response.body.errorType]
+      throw errorMessages[err.message]
     })
 }
