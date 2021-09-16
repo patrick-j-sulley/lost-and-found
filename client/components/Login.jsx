@@ -31,18 +31,19 @@ function Login (props) {
   }
     
   return (
-    <form className="form box" onSubmit={handleSubmit}>
-      <h1 className="title is-2">Login</h1>
-      <hr />
-      {auth.errorMessage && <span className="has-text-danger is-large">{auth.errorMessage}</span>}
-      <label className="label is-large has-text-centered">Username
-        <input required className="input has-text-centered is-large is-fullwidth" placeholder="User Name" type="text" name="username" autoComplete="username" value={formData.username} onChange={handleChange}/>
-      </label>
-      <label className="label is-large has-text-centered">Password
-        <input required className="input has-text-centered is-large is-fullwidth" placeholder="Password" type="password" name="password" autoComplete="current-password" value={formData.password} onChange={handleChange}/>
-      </label>
-      <input className="button is-large is-fullwidth is-success" value='Login' type="submit" />
-    </form>
+    <>
+      <form className="form box" onSubmit={handleSubmit}>
+        {auth.errorMessage && <span className="has-text-danger is-large">{auth.errorMessage}</span>}
+        <label className="label is-normal">Username
+          <input required className="login_form input is-normal" placeholder="User Name" type="text" name="username" autoComplete="username" value={formData.username} onChange={handleChange}/>
+        </label>
+        <label className="label is-normal">Password
+          <input required className="login_form input is-normal" placeholder="Password" type="password" name="password" autoComplete="current-password" value={formData.password} onChange={handleChange}/>
+        </label>
+        <input className="button is-normal is-success" value='Login' type="submit" />
+      </form>
+      <img className="login-photo" src="/images/phone-animals-illustration.png" alt="cartoon of animals and their owners doing stuff" />
+    </>
   )
 }
 
