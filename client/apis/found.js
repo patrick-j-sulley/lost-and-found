@@ -28,3 +28,12 @@ export function delFoundPetAPI (foundID) {
     .then(res => res)
     .catch(errorHandler('DELETE', '/api/found/:id'))
 }
+
+export function updateFoundPetAPI (updateFound) {
+    return request.patch(`/api/found/${updateFound.id}`)
+    .send(updateFound)
+    .then(res => {
+        return res.body
+    })
+    .catch(errorHandler('PATCH', '/api/found/:id'))
+}
