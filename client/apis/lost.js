@@ -7,7 +7,6 @@ export function getLostPetsAPI () {
         })
 }
 
-
 export function getLostPetByIdAPI (lostID) {
     return request.get (`/api/lost/${lostID}`)
         .then(res => {
@@ -28,4 +27,13 @@ export function delLostPetAPI (lostID) {
     return request.del(`/api/lost/${lostID}`)
     .then(res => res)
     .catch(errorHandler('DELETE', '/api/lost/:id'))
+}
+
+export function updateLostPetAPI (updateLost) {
+    return request.patch(`/api/lost/${updateLost.id}`)
+    .send(updateLost)
+    .then(res => {
+        return res.body
+    })
+    .catch(errorHandler('PATCH', '/api/lost/:id'))
 }
