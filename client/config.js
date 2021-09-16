@@ -1,9 +1,9 @@
 const environments = {
   development: 'http://localhost:3000/api/v1',
   test: 'http://localhost:3333/api/v1',
-  production: '',
+  production: 'https://missingfursons.herokuapp.com/api/v1',
   integration: '',
-  deployment: '',
+  deployment: 'https://missingfursons.herokuapp.com/api/v1',
   build: ''
 }
 
