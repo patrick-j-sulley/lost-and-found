@@ -1,4 +1,4 @@
-import { addLostPetAPI, getAllLostAPI } from "../apis/lost"
+import { addLostPetAPI, getLostPetsAPI } from "../apis/lost"
 
 
 // --- CASES ---
@@ -26,7 +26,7 @@ export const setLostPet = (lostPet) => {
 
 export const getAllLost = () => {
   return (dispatch) => {
-    getAllLostAPI()
+    getLostPetsAPI()
       .then(lostPets => {
         console.log(lostPets)
         dispatch(setAllLost(lostPets))

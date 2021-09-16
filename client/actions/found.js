@@ -1,4 +1,4 @@
-import { addFoundPetAPI, getAllFoundAPI } from "../apis/found"
+import { addFoundPetAPI, getFoundPetsAPI } from "../apis/found"
 
 
 // --- CASES ---
@@ -26,7 +26,7 @@ export const setFoundPet = (foundPet) => {
 
 export const getAllFound = () => {
   return (dispatch) => {
-    getAllFoundAPI()
+    getFoundPetsAPI()
       .then(foundPets => {
         console.log(foundPets)
         dispatch(setAllFound(foundPets))
