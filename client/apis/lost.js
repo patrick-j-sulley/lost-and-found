@@ -6,3 +6,12 @@ export function getLostPetsAPI () {
             return res.body
         })
 }
+
+export function addLostPetAPI (newLost) {
+    return request.post ('/api/lost')
+        .send(newLost)
+        .then(res => {
+            return res.body
+        })
+        .catch(errorHandler('POST', '/api/lost'))
+}
