@@ -24,16 +24,12 @@ router.post('/', (req, res) => {
     newFound.user_id = req.body.user_id
 
     db.addFound(newFound)
-    .then(newFound => {
+    .then(newFoundId => {
+        newFound.id = newFoundId[0]
         res.json(newFound)
-
-        // WIP - return found pet by id after adding new found pet
-        // db.getFoundById(newFound)
-        // .then(getNewFound => {
-        //     res.json(getNewFound)
-        // })
-
     })
 })
+
+router.delete('/:id')
 
 module.exports = router
