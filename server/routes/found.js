@@ -1,21 +1,21 @@
 const express = require('express')
 
 // db.js required
-// const db = require('../db/pets')
+// const db = require('../db/found')
 
 const router = express.Router()
 
-router.get('/lost', (req, res) => {
+router.get('/', (req, res) => {
     // db functions required
     // db.getLostPets().then(lostPets => {
     //     return res.json(lostPets)
     // })
 })
 
-router.get('/found', (req, res) => {
+router.post('/', (req, res) => {
     // db functions required
-    // db.getFoundPets().then(foundPets => {
-    //     return res.json(foundPets)
+    // db.addLostPet().then(lostPets => {
+    //     return res.json(lostPets)
     // })
 })
 
