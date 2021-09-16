@@ -13,6 +13,7 @@ function getLostById (lostId, db = connection){
     return db('lost')
         .where('lost.id', lostId)
         .select()
+        .join('users', 'user_id', 'users.id')
         .first()
 }
 
@@ -46,6 +47,7 @@ function getFoundById (foundId, db = connection){
     return db('found')
         .where('found.id', foundId)
         .select()
+        .join('users', 'user_id', 'users.id')
         .first()
 }
 

@@ -30,6 +30,7 @@ function Register (props) {
   const handleSubmit = (e) => {
     e.preventDefault()
     e.target.reset()
+    // props.history.push('/listings')
 
     let { password, confirm_password } = formData
 
