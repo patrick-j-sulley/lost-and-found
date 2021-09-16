@@ -37,4 +37,20 @@ router.delete('/:id', (req,res) => {
     })
 })
 
+router.patch('/:id', (req, res) => {
+    const id = req.params.id
+    const updateFound = {}
+    updateFound.species = req.body.species
+    updateFound.photo = req.body.photo
+    updateFound.user_id = req.body.user_id
+    return db.updateFound(id, updateFound)
+    .then(() => {
+        return db.getFoundById(id)
+        .then(result => {
+            var foundPet = result
+            res.json(foundPet)
+        })
+    })
+})
+
 module.exports = router
