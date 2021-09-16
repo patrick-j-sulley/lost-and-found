@@ -1,15 +1,16 @@
 import request from "superagent"
 
 export function getAllLostApi () {
-  request
+  return request
     .get('/api/lost')
     .then(response => {
+      // console.log(response.body)
       return response.body
     })
 }
 
 export function addLostPetApi (lostPet) {
-  request
+  return request
     .post('api/lost')
     .send(lostPet)
     .then(response => {

@@ -2,7 +2,7 @@ import { RECEIVE_LOST_PETS, ADD_LOST_PET } from "../actions/lost"
 
 const initialListState = {lostPets: []}
 
-function lostList (state = initialListState, action) {
+export default function lostPetsReducer (state = initialListState, action) {
   switch (action.type) {
     case RECEIVE_LOST_PETS:
       return {
