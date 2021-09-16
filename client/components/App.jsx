@@ -7,6 +7,9 @@ import Register from './Register'
 import Nav from './Nav'
 import Listings from './Listings'
 import PetProfile from './PetProfile'
+import PostLostForm from './PostLostForm'
+import PostFoundForm from './PostFoundForm'
+import About from './About'
 
 import { checkAuth } from '../actions/auth'
 
@@ -35,10 +38,16 @@ function App (props) {
           {!auth.isAuthenticated &&
             <Route exact path="/" component={Login} />
           }
+          {auth.isAuthenticated && 
+            <Route exact path="/" component={Listings} />
+          }
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/listings" component={Listings} />
           <Route path="/pet-profile" component={PetProfile} />
+          <Route path="/lost-form" component={PostLostForm} />
+          <Route path="/found-form" component={PostFoundForm} />
+          <Route path="/about" component={About} />
         </div>
 
       </div>
