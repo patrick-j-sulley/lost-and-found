@@ -7,6 +7,14 @@ export function getLostPetsAPI () {
         })
 }
 
+
+export function getLostPetByIdAPI (lostID) {
+    return request.get (`/api/lost/${lostID}`)
+        .then(res => {
+            return res.body
+        })
+}
+
 export function addLostPetAPI (newLost) {
     return request.post ('/api/lost')
         .send(newLost)

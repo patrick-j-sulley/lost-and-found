@@ -7,6 +7,13 @@ export function getFoundPetsAPI () {
         })
 }
 
+export function getFoundPetByIdAPI (foundID) {
+    return request.get (`/api/found/${foundID}`)
+        .then(res => {
+            return res.body
+        })
+}
+
 export function addFoundPetAPI (newFound) {
     return request.post ('/api/found')
         .send(newFound)
