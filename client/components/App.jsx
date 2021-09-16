@@ -38,6 +38,7 @@ function App (props) {
           }
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
+          <Route path="/listings" component={Listings} />
         </div>
 
       </div>

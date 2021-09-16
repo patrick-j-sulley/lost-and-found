@@ -30,17 +30,18 @@ function Register (props) {
   const handleSubmit = (e) => {
     e.preventDefault()
     e.target.reset()
+    props.history.push('/listings')
 
     let { password, confirm_password } = formData
 
-    if (confirm_password != password){
-      dispatch(loginError("Passwords don't match"))
-    } else {
-      const confirmSuccess = () => { props.history.push('/') }
-      const userInfo = { ...formData }
-      delete userInfo.confirm_password
-      dispatch(registerUserRequest(userInfo, confirmSuccess))
-    }
+    // if (confirm_password != password){
+    //   dispatch(loginError("Passwords don't match"))
+    // } else {
+    //   const confirmSuccess = () => { props.history.push('/') }
+    //   const userInfo = { ...formData }
+    //   delete userInfo.confirm_password
+    //   dispatch(registerUserRequest(userInfo, confirmSuccess))
+    // }
   }
 
   return (

@@ -25,8 +25,9 @@ function Login (props) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const confirmSuccess = () => { props.history.push('/') }
-    dispatch(loginUser(formData, confirmSuccess))
+    props.history.push('/listings')
+    // const confirmSuccess = () => { props.history.push('/') }
+    // dispatch(loginUser(formData, confirmSuccess))
   }
     
   return (
