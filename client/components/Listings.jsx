@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import Login from './Login'
 import Register from './Register'
 import Nav from './Nav'
-import ListItem from './ListItem'
+import ListItem from './ListItemFOUND'
 
 import { checkAuth } from '../actions/auth'
 

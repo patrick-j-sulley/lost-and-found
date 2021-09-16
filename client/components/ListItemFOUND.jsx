@@ -1,7 +1,8 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-export default function ListItem(props) {
-  
+function ListItemFOUND(props, { dispatch }) {
+
   return (
     <div class="card">
       <div class="card-image">
@@ -20,3 +21,5 @@ export default function ListItem(props) {
     </div>
   )
 }
+
+export default connect()(ListItemFOUND)
