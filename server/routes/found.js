@@ -10,6 +10,12 @@ router.get('/', (req, res) => {
     })
 })
 
+router.get('/:id', (req, res) => {
+    db.getFoundById(req.params.id).then(foundpet => {
+        return res.json(foundpet)
+    })
+})
+
 // WIP
 router.post('/', (req, res) => {
     // db functions required
