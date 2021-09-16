@@ -30,4 +30,11 @@ router.post('/', (req, res) => {
     })
 })
 
+router.delete('/:id', (req,res) => {
+    db.removeLost(req.params.id)
+    .then(removedPet => {
+        res.json(removedPet)
+    })
+})
+
 module.exports = router

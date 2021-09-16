@@ -23,3 +23,9 @@ export function addLostPetAPI (newLost) {
         })
         .catch(errorHandler('POST', '/api/lost'))
 }
+
+export function delLostPetAPI (lostID) {
+    return request.del(`/api/lost/${lostID}`)
+    .then(res => res)
+    .catch(errorHandler('DELETE', '/api/lost/:id'))
+}
