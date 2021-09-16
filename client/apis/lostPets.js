@@ -2,7 +2,7 @@ import request from "superagent"
 
 export function getAllLostApi () {
   request
-    .get('api/lost')
+    .get('/api/lost')
     .then(response => {
       return response.body
     })
@@ -15,4 +15,8 @@ export function addLostPetApi (lostPet) {
     .then(response => {
       return response.body.newId
     })
+}
+
+export function testFunct () {
+  return 'hi'
 }

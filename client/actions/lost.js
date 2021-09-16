@@ -1,41 +1,41 @@
-import { getAllLostApi } from "../apis/lostPets"
+import { addLostPetApi, getAllLostApi, testFunct } from "../apis/lostPets"
 
 export const RECIEVE_LOST_PETS = 'RECEIVE_LOST_PETS'
 export const ADD_LOST_PET = 'ADD_LOST_PET'
 
 export const getAllLost = () => {
   return (dispatch) => {
-    getAllLostApi()
-      .then(lostPets => {
-        setAllLost(lostPets)
-      })
+    console.log(getAllLostApi())
+      // .then(lostPets => {
+      //   dispatch(setAllLost(lostPets))
+      // })
   }
 }
-
 export const setAllLost = (lostPets) => {
   return {
     type: RECIEVE_LOST_PETS,
     lostPets: lostPets
   }
 }
-
-export const addLost = (lostPet) => {
+export function requestAllLost () {
   return {
-    type: ADD_LOST_PET,
-    lostPet: lostPet
+    type: RECIEVE_LOST_PETS,
+    isFetching: true,
+    isAuthenticated: false
   }
 }
 
-export function loginUser (creds, confirmSuccess) {
-  return dispatch => {
-    dispatch(requestLogin())
-    return login(creds)
-      .then(userInfo => {
-        dispatch(receiveLogin(userInfo))
-        confirmSuccess()
+export const addLostPet = (lostPet) => {
+  return (dispatch) => {
+    return addLostPetApi(lostPet)
+      .then(newLost => {
+        dispatch(setLostPet(newLost))
       })
-      .catch(err => {
-        dispatch(loginError(err))
-      })
+  }
+}
+export const setLostPet = (lostPet) => {
+  return {
+    type: ADD_LOST_PET,
+    lostPet: lostPet
   }
 }
