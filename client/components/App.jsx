@@ -7,7 +7,6 @@ import Register from './Register'
 import Nav from './Nav'
 
 import Listings from './Listings'
-import ListItem from './ListItemFOUND'
 
 import { checkAuth } from '../actions/auth'
 
