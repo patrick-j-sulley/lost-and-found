@@ -22,3 +22,9 @@ export function addFoundPetAPI (newFound) {
         })
         .catch(errorHandler('POST', '/api/found'))
 }
+
+export function delFoundPetAPI (foundID) {
+    return request.del(`/api/found/${foundID}`)
+    .then(res => res)
+    .catch(errorHandler('DELETE', '/api/found/:id'))
+}
