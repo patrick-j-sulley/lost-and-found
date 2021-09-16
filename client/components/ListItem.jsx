@@ -1,7 +1,6 @@
 import React from 'react'
-import { connect } from 'react-redux'
 
-function ListItemFOUND(props, { dispatch }) {
+function ListItem(props, { dispatch }) {
 
   return (
     <div class="card">
@@ -13,7 +12,7 @@ function ListItemFOUND(props, { dispatch }) {
       <div class="card-content">
         <div class="media">
           <div class="media-content">
-            <p class="title is-4">{props.name}</p>
+            {props.name ? <p class="title is-4">{props.name}</p> : <p></p>}            
             <p class="subtitle is-6">{props.species}</p>
           </div>
         </div>
@@ -22,4 +21,4 @@ function ListItemFOUND(props, { dispatch }) {
   )
 }
 
-export default connect()(ListItemFOUND)
+export default ListItem
