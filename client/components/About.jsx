@@ -11,6 +11,7 @@ export default function About() {
         <p>Losing a pet is losing a loved one, and we want to get your family back together.</p>
         <p>Here you can post family you've lost and found</p>
       </div>
+      <img className="about-photo" src="/images/Lady-phone-dog.png" alt="cartoon of woman, dog and phone" />
     </>
   )
-}
+} 
