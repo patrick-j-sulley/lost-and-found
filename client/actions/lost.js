@@ -28,7 +28,7 @@ export const getAllLost = () => {
   return (dispatch) => {
     getLostPetsAPI()
       .then(lostPets => {
-        console.log(lostPets)
+        // console.log(lostPets)
         dispatch(setAllLost(lostPets))
       })
   }
