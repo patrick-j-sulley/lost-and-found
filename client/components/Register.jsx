@@ -49,23 +49,23 @@ function Register (props) {
       <form className="form-positioning-register Register form box" onSubmit={handleSubmit}>
         {auth.errorMessage && <span className="has-text-danger is-large">{auth.errorMessage}</span>}
         <label className="label is-normal">Username
-          <input required className="login_form input is-normal" placeholder="User Name" type="text" name="username" autoComplete="username" onChange={handleChange} value={formData.username}/>
+          <input required className="input is-normal" placeholder="User Name" type="text" name="username" autoComplete="username" onChange={handleChange} value={formData.username}/>
         </label>
         <div className="columns">
           <label className="label is-normal">Contact Details
-            <input required className="login_form input is-normal" placeholder="Contact Details" type="text" name="contact_details" onChange={handleChange} value={formData.contact_details}/>
+            <input required className="input is-normal" placeholder="Contact Details" type="text" name="contact_details" onChange={handleChange} value={formData.contact_details}/>
           </label>
           <label className="label is-normal">Email Address
-            <input required className="login_form input is-normal" placeholder="Email Adress" type="text" name="email_address" onChange={handleChange} value={formData.email_address}/>
+            <input required className="input is-normal" placeholder="Email Adress" type="text" name="email_address" onChange={handleChange} value={formData.email_address}/>
           </label>
         </div>
         <br />
         <div className="columns">
           <label className="label is-normal">Password
-            <input required className="login_form input is-normal" placeholder="Password" type="password" name="password"  autoComplete="new-password" onChange={handleChange} value={formData.password}/>
+            <input required className="input is-normal" placeholder="Password" type="password" name="password"  autoComplete="new-password" onChange={handleChange} value={formData.password}/>
           </label>
           <label className="label is-normal">Confirm Password
-            <input required className="login_form input is-normal" placeholder="Confirm Password" type="password" name="confirm_password" autoComplete="new-password" onChange={handleChange} value={formData.confirm_password}/>
+            <input required className="input is-normal" placeholder="Confirm Password" type="password" name="confirm_password" autoComplete="new-password" onChange={handleChange} value={formData.confirm_password}/>
           </label>
         </div>
         <input className="button is-normal button-pink" value="Register" type="submit" />
