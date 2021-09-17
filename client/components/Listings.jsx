@@ -20,7 +20,6 @@ function Listings ({ auth, dispatch, lostPetsReducer, foundPetsReducer }) {
     dispatch(getAllFound())
   } , [])
 
-
   const lostButtonHandler = () => {
     setAnimalsDisplay(lostPetsReducer.lostPets)
 
