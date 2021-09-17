@@ -1,4 +1,19 @@
+
+h1.title {
+  position: absolute;
+  top: 100px;
+  color: #00c3d9;
+}
+
+.text-user-position {
+  display: block;
+  // position: absolute !important;
+  top: 200px !important;
+}
+
 .login_form {
+  position:absolute;
+  top: 30%;
   display: block;
   width: 250px
 }
@@ -8,5 +23,16 @@
   max-width: 1000px;
   position: absolute;
   right: 0px;
-  bottom: 0px;
+  
+  bottom: 30px;
+  
 }
+
+.button-pink {
+  background-color: #ff3d88;
+  color: white;
+}
+
+
+
+
