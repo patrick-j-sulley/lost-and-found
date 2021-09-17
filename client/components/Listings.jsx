@@ -7,63 +7,26 @@ import Register from './Register'
 import ListItem from './ListItem'
 
 import { checkAuth } from '../actions/auth'
+import { getAllFound } from '../actions/found'
+import { getAllLost } from '../actions/lost'
 
-function Listings ({ auth, dispatch }) {
-
-  const animalsLost = [
-    {
-      "id": 1000,
-      "name": "Steve",
-      "species": "chipmunk",
-      "photo": "https://i.redd.it/p8bplj0w2j131.jpg",
-      "user_id": 1
-    },
-    {
-      "id": 1001,
-      "name": "Marvin",
-      "species": "dog",
-      "photo": "https://i.imgur.com/KAh9NOq.jpeg",
-      "user_id": 2
-    },
-    {
-      "id": 1002,
-      "name": "Isabelle",
-      "species": "cat",
-      "photo": "https://i.imgflip.com/5110mw.png",
-      "user_id": 3
-    }
-  ]
-
-  const animalsFound = [
-    {
-      "id": 90000,
-      "species": "dog",
-      "photo": "https://static.vets-now.com/uploads/2017/06/my-dog-is-in-pain-320x212.jpg",
-      "user_id": 4
-    },
-    {
-      "id": 90001,
-      "species": "rabbit",
-      "photo": "https://static.givealittle.co.nz/assets/hero/e5d4f064-ba06-4ddd-9fe1-abfd0157eaf1-800",
-      "user_id": 5
-    },
-    {
-      "id": 90002,
-      "species": "sheep", 
-      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFUOJm7-fzSFEwoEQbohtmV6oJmJzERCn4iACPm7yyGBz3ZUH6q-hNkPsz0ZS4ux2DUN0&usqp=CAU",
-      "user_id": 6
-    }
-  ]
-
-  const [animalsDisplay, setAnimalsDisplay] = useState(animalsLost)
-  const [speciesInput, setSpeciesInput] = useState('')
+function Listings ({ auth, dispatch, lostPetsReducer, foundPetsReducer }) {
+  
+  const [animalsDisplay, setAnimalsDisplay] = useState([])
+  // const [speciesInput, setSpeciesInput] = useState('')
+  
+  useEffect(() => {
+    dispatch(getAllLost())
+    dispatch(getAllFound())
+  } , [])
 
   const lostButtonHandler = () => {
-    setAnimalsDisplay(animalsLost)
+    setAnimalsDisplay(lostPetsReducer.lostPets)
+
   }
 
   const foundButtonHandler = () => {
-    setAnimalsDisplay(animalsFound)
+    setAnimalsDisplay(foundPetsReducer.foundPets)
   }
 
   const filterSpecies = () => {
@@ -84,6 +47,10 @@ function Listings ({ auth, dispatch }) {
   const handleSpeciesInput = (evt) => {
     setSpeciesInput(evt.target.value)
   }
+
+  // Workaround to get page to show both lost anf found pets on load
+  const allPets = [...lostPetsReducer.lostPets, ...foundPetsReducer.foundPets]
+  
   
   return (
     <>
@@ -119,14 +86,22 @@ function Listings ({ auth, dispatch }) {
           </div>
         </div> */}
       </div>
-      {animalsDisplay.map(animal => <ListItem data={animal} />)}
+      {animalsDisplay.length <= 0 ? 
+      // (foundPetsReducer.foundPets?.map(animal => <ListItem data={animal} />),
+      // (lostPetsReducer.lostPets?.map(animal => <ListItem data={animal} />)))
+      allPets?.map(animal => <ListItem data={animal} />)
+      :
+      animalsDisplay?.map(animal => <ListItem data={animal} />)
+    }
     </>
   )
 }
 
 const mapStateToProps = (globalState) => {
   return {
-    auth: globalState.auth
+    auth: globalState.auth,
+    lostPetsReducer: globalState.lostPetsReducer,
+    foundPetsReducer: globalState.foundPetsReducer
   }
 }
 

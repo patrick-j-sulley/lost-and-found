@@ -13,8 +13,9 @@ export default function foundPetsReducer (state = initialListState, action) {
         foundPets: [...state, action.foundPet]
       }
     default: 
-      return {
-        state
-      }
+      return state
+      // {
+      //  foundPets: []
+      // }
   }
 }
