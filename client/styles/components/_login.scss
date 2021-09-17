@@ -1,4 +1,22 @@
+
+h1.title {
+  position: absolute;
+  top: 100px;
+  color: #00c3d9;
+  font-family: 'Open Sans';
+  font-weight: 700;
+  
+}
+
+.text-user-position {
+  display: block;
+  // position: absolute !important;
+  top: 200px !important;
+}
+
 .login_form {
+  position:absolute;
+  top: 30%;
   display: block;
   width: 250px
 }
@@ -8,5 +26,16 @@
   max-width: 1000px;
   position: absolute;
   right: 0px;
-  bottom: 0px;
+
+  bottom: 30px;
+  
+}
+
+.button-pink {
+  background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
+  color: white;
+  border: none;
+  letter-spacing: .4px;
+  box-shadow: rgba(57, 31, 91, 0.24) 0 2px 2px,rgba(179, 132, 201, 0.4) 0 8px 12px;
+  
 }

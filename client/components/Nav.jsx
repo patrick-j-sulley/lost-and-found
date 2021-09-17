@@ -33,10 +33,11 @@ function Nav (props) {
             { auth.isAuthenticated
             ? (
               <>
-                <Link to='listings' className="navbar-item is-large">Home</Link>
-                <Link to='/postfound' className="navbar-item is-large">Post Found</Link>
-                <Link to='/postlost' className="navbar-item is-large">Post Lost</Link>
+                <Link to='listings' className="navbar-item is-large">Listings</Link>
+                <Link to='found-form' className="navbar-item is-large">Post Found</Link>
+                <Link to='lost-form' className="navbar-item is-large">Post Lost</Link>
                 <Link to='/' className="navbar-item is-large" onClick={() => logout()}>Logout</Link>
+                <Link to='about' className="navbar-item is-large">About</Link>
               </>
                 )
               : (
@@ -44,6 +45,7 @@ function Nav (props) {
                 <Link to='listings' onClick={toggleBurger} className="navbar-item is-large">Listings</Link>
                 <Link onClick={toggleBurger} className="navbar-item is-large" to='/login'>Login</Link>
                 <Link onClick={toggleBurger} className="navbar-item" to='/register'>Register</Link>
+                <Link to='about' className="navbar-item is-large">About</Link>
               </>
               )
             }

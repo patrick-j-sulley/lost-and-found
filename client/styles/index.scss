@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 // Import a Google Font
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
 // Import custom variables and Bulma overides
 @import "./variables.scss";
@@ -16,7 +16,7 @@
 @import "bulma/sass/components/navbar.sass";
 @import "bulma/sass/components/dropdown.sass";
 @import "bulma/sass/components/card.sass";
-@import "bulma/sass/layout/hero.sass";
+// @import "bulma/sass/layout/hero.sass";
 @import "bulma/sass/layout/section.sass";
 
 // Importing custom component styles

@@ -23,13 +23,37 @@ router.post('/', (req, res) => {
     newFound.photo = req.body.photo
     newFound.user_id = req.body.user_id
 
-    db.addFound(newFound)
-    .then(newFoundId => {
-        newFound.id = newFoundId[0]
-        res.json(newFound)
-    })
+    return db.addFound(newFound)
+        .then((newFoundId) => {
+            return db.getFoundById(newFoundId[0])
+                .then((result) => {
+                    var newPet = result
+                    res.json(newPet)
+                })
+        })
 })
 
-router.delete('/:id')
+router.delete('/:id', (req, res) => {
+    db.removeFound(req.params.id)
+        .then(removedPet => {
+            res.json(removedPet)
+        })
+})
+
+router.patch('/:id', (req, res) => {
+    const id = req.params.id
+    const updateFound = {}
+    updateFound.species = req.body.species
+    updateFound.photo = req.body.photo
+    updateFound.user_id = req.body.user_id
+    return db.updateFound(id, updateFound)
+        .then(() => {
+            return db.getFoundById(id)
+                .then(result => {
+                    var foundPet = result
+                    res.json(foundPet)
+                })
+        })
+})
 
 module.exports = router
