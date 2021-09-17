@@ -32,16 +32,18 @@ function Login (props) {
     
   return (
     <>
-      <form className="form box" onSubmit={handleSubmit}>
+    <div>
+      <form className="form box login_form" onSubmit={handleSubmit}>
         {auth.errorMessage && <span className="has-text-danger is-large">{auth.errorMessage}</span>}
-        <label className="label is-normal">Username
-          <input required className="login_form input is-normal" placeholder="User Name" type="text" name="username" autoComplete="username" value={formData.username} onChange={handleChange}/>
+        <label className="label is-normal text-user-position" id="text-input-label" >Username
+          <input required className=" input is-normal"  placeholder="User Name" type="text" name="username" autoComplete="username" value={formData.username} onChange={handleChange}/>
         </label>
-        <label className="label is-normal">Password
-          <input required className="login_form input is-normal" placeholder="Password" type="password" name="password" autoComplete="current-password" value={formData.password} onChange={handleChange}/>
+        <label className="label is-normal text-user-position ">Password
+          <input required className=" input is-normal" placeholder="Password" type="password" name="password" autoComplete="current-password" value={formData.password} onChange={handleChange}/>
         </label>
-        <input className="button is-normal is-success" value='Login' type="submit" />
+        <input className="button is-normal button-pink" value='Login' type="submit" />
       </form>
+      </div>
       <img className="login-photo" src="/images/phone-animals-illustration.png" alt="cartoon of animals and their owners doing stuff" />
     </>
   )
