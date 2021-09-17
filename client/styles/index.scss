@@ -4,20 +4,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
 // Import custom variables and Bulma overides
-@import "./variables.scss";
+@import './variables.scss';
 
 // Import only what you need from Bulma
-@import "bulma/sass/utilities/_all.sass";
-@import "bulma/sass/base/_all.sass";
-@import "bulma/sass/elements/button.sass";
-@import "bulma/sass/elements/container.sass";
-@import "bulma/sass/elements/title.sass";
-@import "bulma/sass/form/_all.sass";
-@import "bulma/sass/components/navbar.sass";
-@import "bulma/sass/components/dropdown.sass";
-@import "bulma/sass/components/card.sass";
+@import 'bulma/sass/utilities/_all.sass';
+@import 'bulma/sass/base/_all.sass';
+@import 'bulma/sass/elements/button.sass';
+@import 'bulma/sass/elements/container.sass';
+@import 'bulma/sass/elements/title.sass';
+@import 'bulma/sass/form/_all.sass';
+@import 'bulma/sass/components/navbar.sass';
+@import 'bulma/sass/components/dropdown.sass';
+@import 'bulma/sass/components/card.sass';
+
 // @import "bulma/sass/layout/hero.sass";
-@import "bulma/sass/layout/section.sass";
+@import 'bulma/sass/layout/section.sass';
 
 // Importing custom component styles
-@import "./components/_components";
+@import './components/_components';

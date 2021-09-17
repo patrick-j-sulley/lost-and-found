@@ -10,19 +10,17 @@ import { checkAuth } from '../actions/auth'
 import { getAllFound } from '../actions/found'
 import { getAllLost } from '../actions/lost'
 
-function Listings ({ auth, dispatch, lostPetsReducer, foundPetsReducer }) {
-  
+function Listings({ auth, dispatch, lostPetsReducer, foundPetsReducer }) {
   const [animalsDisplay, setAnimalsDisplay] = useState([])
   // const [speciesInput, setSpeciesInput] = useState('')
-  
+
   useEffect(() => {
     dispatch(getAllLost())
     dispatch(getAllFound())
-  } , [])
+  }, [])
 
   const lostButtonHandler = () => {
     setAnimalsDisplay(lostPetsReducer.lostPets)
-
   }
 
   const foundButtonHandler = () => {
@@ -31,27 +29,26 @@ function Listings ({ auth, dispatch, lostPetsReducer, foundPetsReducer }) {
 
   const filterSpecies = () => {
     let filterArr = []
-      animalsDisplay.map(animal => {
-       if ( animal.species === speciesInput ) {
-         filterArr.push(animal)
-       }
-      })
-      return filterArr
+    animalsDisplay.map(animal => {
+      if (animal.species === speciesInput) {
+        filterArr.push(animal)
+      }
+    })
+    return filterArr
   }
 
-  const handleSubmit = (evt) => {
+  const handleSubmit = evt => {
     evt.preventDefault()
-    setAnimalsDisplay(filterSpecies()) 
+    setAnimalsDisplay(filterSpecies())
   }
 
-  const handleSpeciesInput = (evt) => {
+  const handleSpeciesInput = evt => {
     setSpeciesInput(evt.target.value)
   }
 
   // Workaround to get page to show both lost anf found pets on load
   const allPets = [...lostPetsReducer.lostPets, ...foundPetsReducer.foundPets]
-  
-  
+
   return (
     <>
       <h1>Currently on the loose</h1>
@@ -59,8 +56,12 @@ function Listings ({ auth, dispatch, lostPetsReducer, foundPetsReducer }) {
         <div class="dropdown is-hoverable">
           <div class="dropdown-trigger">
             <form onSubmit={handleSubmit}>
-              <label htmlFor='species input' />
-              <input placeholder='enter species' type='text' onChange={(e) => handleSpeciesInput(e)}/>
+              <label htmlFor="species input" />
+              <input
+                placeholder="enter species"
+                type="text"
+                onChange={e => handleSpeciesInput(e)}
+              />
               <button>Submit</button>
             </form>
             {/* <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
@@ -71,7 +72,7 @@ function Listings ({ auth, dispatch, lostPetsReducer, foundPetsReducer }) {
             <div class="dropdown-content">
               <a onClick={lostButtonHandler} class="dropdown-item">
                 Lost
-              </a>   
+              </a>
               <a onClick={foundButtonHandler} class="dropdown-item">
                 Found
               </a>
@@ -86,22 +87,22 @@ function Listings ({ auth, dispatch, lostPetsReducer, foundPetsReducer }) {
           </div>
         </div> */}
       </div>
-      {animalsDisplay.length <= 0 ? 
-      // (foundPetsReducer.foundPets?.map(animal => <ListItem data={animal} />),
-      // (lostPetsReducer.lostPets?.map(animal => <ListItem data={animal} />)))
-      allPets?.map(animal => <ListItem data={animal} />)
-      :
-      animalsDisplay?.map(animal => <ListItem data={animal} />)
-    }
+      <div class="card--container">
+        {animalsDisplay.length <= 0
+          ? // (foundPetsReducer.foundPets?.map(animal => <ListItem data={animal} />),
+            // (lostPetsReducer.lostPets?.map(animal => <ListItem data={animal} />)))
+            allPets?.map(animal => <ListItem data={animal} />)
+          : animalsDisplay?.map(animal => <ListItem data={animal} />)}
+      </div>
     </>
   )
 }
 
-const mapStateToProps = (globalState) => {
+const mapStateToProps = globalState => {
   return {
     auth: globalState.auth,
     lostPetsReducer: globalState.lostPetsReducer,
-    foundPetsReducer: globalState.foundPetsReducer
+    foundPetsReducer: globalState.foundPetsReducer,
   }
 }
 
