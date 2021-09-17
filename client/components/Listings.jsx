@@ -49,7 +49,7 @@ function Listings ({ auth, dispatch }) {
     },
     {
       "id": 90002,
-      "species": "sheep",
+      "species": "sheep", 
       "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFUOJm7-fzSFEwoEQbohtmV6oJmJzERCn4iACPm7yyGBz3ZUH6q-hNkPsz0ZS4ux2DUN0&usqp=CAU",
       "user_id": 6
     }
